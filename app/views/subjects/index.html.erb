@@ -1,7 +1,9 @@
-<% @subjects.each do |s| %>
+<% @subjects.each do |subject| %>
 
-<h2><%= s.name %></h2>
-<p><%= s.subject_code %></p>
-<p><%= time_ago_in_words(s.created_at) %></p>
+<h2><%=link_to subject.name, subject %></h2>
+<p><%= subject.subject_code %></p>
+<p><%= time_ago_in_words(subject.created_at) %></p>
 
 <% end %>
+
+<%= link_to "New Note", new_subject_path %>

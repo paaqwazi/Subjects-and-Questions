@@ -25,9 +25,18 @@ class SubjectsController < ApplicationController
 	end
 
 	def update
+		if @subject.update(subject_params)
+			redirect_to @subject
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@subject.destroy
+		respond_to do |format|
+			format.html{redirect_to subjects_url, notice: "Subject was successfully deleted"}
+		end
 	end
 
 	private

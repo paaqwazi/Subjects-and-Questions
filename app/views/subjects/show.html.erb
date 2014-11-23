@@ -5,3 +5,6 @@
 <p><%= @subject.subject_code %></p>
 
 <%= link_to "All subjects", subjects_path %>
+
+<%= link_to "Edit", edit_subject_path(@subject) %>
+<%= link_to "Delete", subject_path(@subject), method: :delete, data: {confirm: "Are you sure?"} %>
