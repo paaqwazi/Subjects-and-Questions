@@ -1,3 +1,51 @@
-// Place all the styles related to the Subjects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#subjects {
+	.subject {
+		background: $light_gray;
+		width: 30%;
+		min-height: 150px;
+		margin: 1rem 1%;
+		padding: 1.5rem 2.5%;
+		float: left;
+		border-radius: .4rem;
+		position: relative;
+		.name {
+			@include bold_font;
+			color: white;
+			margin: 0;
+			letter-spacing: 1px;
+		}
+		.lecturer {
+			position: absolute;
+			bottom: .25rem;
+			left: 8.5%;
+			color: green;
+			font-size: .85rem;
+		}
+	}
+}
+
+#subject_show {
+	.name {
+		@include bold_font;
+		font-size: 2.5rem;
+		margin-bottom: 1.25rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #E9E9E9;
+	}
+	p {
+		font-size: 1.375rem;
+		line-height: 1.75;
+	}
+	.buttons {
+		margin-top: 3rem;
+		a.button {
+			padding: .5rem 2rem;
+			border-radius: 2rem;
+			text-decoration: none;
+			color: green;
+			border: 5px solid #E9E9E9;
+			@include bold_font;
+			background: transparent;
+		}
+	}
+}

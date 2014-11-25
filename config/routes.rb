@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :admins
   get 'welcome/index'
+  resources :subjects
+
+  authenticated :admin do
+    root 'subjects#index', as: "authenticated_root"
+  end
 
   root 'welcome#index'
-
-  resources :subjects
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

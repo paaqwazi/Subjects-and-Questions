@@ -1,18 +1,19 @@
 class SubjectsController < ApplicationController
 	before_action :find_subject, only: [:show, :edit, :update, :destroy]
+	
 	def index
-		@subjects = Subject.all.order("created_at DESC")
+		@subjects = Subject.where(admin_id: current_admin)
 	end
 
 	def show
 	end
 
 	def new
-		@subject = Subject.new
+		@subject = current_admin.subjects.build
 	end
 
 	def create
-		@subject = Subject.new(subject_params)
+		@subject = current_admin.subjects.build(subject_params)
 
 		if @subject.save
 			redirect_to @subject

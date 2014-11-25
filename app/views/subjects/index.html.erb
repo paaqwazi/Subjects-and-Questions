@@ -1,3 +1,5 @@
+<div class="wrapper_with_padding">
+	<div id="notes" class="clearfix">
 <% @subjects.each do |subject| %>
 
 <h2><%=link_to subject.name, subject %></h2>
@@ -7,3 +9,5 @@
 <% end %>
 
 <%= link_to "New Note", new_subject_path %>
+	</div>
+</div>
